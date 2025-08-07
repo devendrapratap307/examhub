@@ -3,8 +3,8 @@ package com.examhub.examhub.common.constant;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MSG_CONST {
-    private MSG_CONST() {}
+public class MSG_CODE {
+    private MSG_CODE() {}
     public static final Map<String, String> MSG = new HashMap<>();
     public static final String SUCCESS = "S0001";
     public static final String WARNING = "W0001";
