@@ -13,7 +13,7 @@ public class QuestionTO {
 
     private Integer id;
 //    private Assessment assessment;
-    private String questionText;
+    private String question;
     private String questionType;
     private String aOpt;
     private String bOpt;

@@ -22,7 +22,7 @@ public class QuestionBO {
 //    private Assessment assessment;
 
     @Column(name = "question_text", columnDefinition = "TEXT", nullable = false)
-    private String questionText;
+    private String question;
 
     @Column(name = "question_type", length = 50, nullable = false)
     private String questionType;
