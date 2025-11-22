@@ -7,6 +7,14 @@ public class APP_CONST {
         public static final String EXAMINEE = "EXAMINEE"; // student or candidate (Who Attends the Exam)
         public static final String EXAMINER = "EXAMINER"; // RECRUITER or Instructor/Admin (Who Takes the Exam)
     }
+    public static class STATUS {
+        public static final String ACTIVE = "ACT";
+        public static final String DEACTIVE = "DCT";
+        public static final String DELETED = "DEL";
+        public static final String VALID = "VALID";
+        public static final String INVALID = "INVALID";
+    }
+
     public static final String DATE_FORMAT = "yyyy-MM-dd";
     public static final String DATE_FORMAT_TIME = "yyyy-MM-dd HH:mm:ss";
     public static final String DATE_FORMAT_IND = "dd-MM-yyyy";

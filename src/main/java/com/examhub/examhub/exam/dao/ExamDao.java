@@ -1,5 +1,7 @@
 package com.examhub.examhub.exam.dao;
 
+import com.examhub.examhub.common.dto.CommonListTO;
+import com.examhub.examhub.common.dto.SearchRequestTO;
 import com.examhub.examhub.exam.dto.AssessmentTO;
 import com.examhub.examhub.exam.model.AssessmentBO;
 
@@ -10,5 +12,5 @@ public interface ExamDao {
     AssessmentBO updateAssessment(AssessmentBO assessment);
     boolean deleteAssessment(Integer id);
     AssessmentBO fetchAssessment(Integer id);
-    List<AssessmentBO> searchAssessment();
+    CommonListTO<AssessmentBO> searchAssessment(SearchRequestTO searchRequest);
 }

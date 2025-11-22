@@ -14,4 +14,10 @@ public class SearchFieldsTO implements Serializable {
 
     private String searchField;
     private String searchFor;
+
+    private Integer recruiterId;
+    private String assessmentType;
+
+    private Integer id;
+    private String email;
 }

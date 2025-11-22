@@ -1,7 +1,10 @@
 package com.examhub.examhub.exam.service;
 
 import com.examhub.examhub.common.dto.ResponseTO;
+import com.examhub.examhub.common.dto.SearchRequestTO;
+import com.examhub.examhub.common.dto.SearchResponseTO;
 import com.examhub.examhub.exam.dto.AssessmentTO;
+import com.examhub.examhub.user.dto.UserTO;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -16,5 +19,5 @@ public interface ExamService {
     AssessmentTO updateAssessment(AssessmentTO assessment);
      boolean deleteAssessment(Integer id);
     AssessmentTO fetchAssessment(Integer id);
-     List<AssessmentTO> searchAssessment();
+    SearchResponseTO<AssessmentTO> searchAssessment(SearchRequestTO searchRequestTO);
 }

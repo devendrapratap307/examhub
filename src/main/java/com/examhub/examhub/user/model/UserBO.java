@@ -18,5 +18,6 @@ public class UserBO {
     private String password;
     private String type;
     private String mobile;
+    private String status;
 
 }

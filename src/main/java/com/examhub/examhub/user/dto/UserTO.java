@@ -12,5 +12,6 @@ public class UserTO {
     private String password;
     private String type;
     private String mobile;
+    private String status;
 
 }

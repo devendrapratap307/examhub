@@ -5,6 +5,7 @@ import com.examhub.examhub.common.dto.CommonListTO;
 import com.examhub.examhub.common.dto.SearchFieldsTO;
 import com.examhub.examhub.common.dto.SearchRequestTO;
 import com.examhub.examhub.common.util.UtilService;
+import com.examhub.examhub.exam.model.AssessmentBO;
 import com.examhub.examhub.user.model.UserBO;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
@@ -35,6 +36,14 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public boolean deleteUser(Integer id) {
+        if(id==null){
+            CriteriaBuilder builder = entityManager.getCriteriaBuilder();
+            CriteriaUpdate<UserBO> update = builder.createCriteriaUpdate(UserBO.class);
+            Root<UserBO> root = update.from(UserBO.class);
+            update.set("status", APP_CONST.STATUS.DELETED);
+            update.where(builder.equal(root.get("id"), id));
+            entityManager.createQuery(update).executeUpdate();
+        }
         return false;
     }
 
@@ -46,7 +55,7 @@ public class UserDaoImpl implements UserDao {
     @Override
     public CommonListTO<UserBO> searchUser(SearchRequestTO searchRequest) {
         SearchFieldsTO searchFieldsObj = searchRequest.getSearchFields();
-        SimpleDateFormat dateFormat = new SimpleDateFormat(APP_CONST.DATE_FORMAT);
+//        SimpleDateFormat dateFormat = new SimpleDateFormat(APP_CONST.DATE_FORMAT);
 
         CriteriaBuilder queryBuilder = entityManager.getCriteriaBuilder();
         CriteriaQuery<UserBO> criteriaQuery = queryBuilder.createQuery(UserBO.class);
@@ -65,7 +74,15 @@ public class UserDaoImpl implements UserDao {
             if (UtilService.checkNull(fieldsFilter)) {
                 searchFilter.add(queryBuilder.or(fieldsFilter.toArray(new Predicate[0])));
             }
+
+            if(UtilService.checkNull(searchFieldsObj.getEmail())) {
+                searchFilter.add(queryBuilder.equal(entityRoot.get("email"), searchFieldsObj.getEmail()));
+            }
+            if(UtilService.checkNull(searchFieldsObj.getId())) {
+                searchFilter.add(queryBuilder.equal(entityRoot.get("id"), searchFieldsObj.getId()));
+            }
         }
+        searchFilter.add(queryBuilder.equal(entityRoot.get("status"), APP_CONST.STATUS.ACTIVE));
         criteriaQuery.where(searchFilter.toArray(new Predicate[0]));
         // Condition for sorting.
 //            Order order = queryBuilder.desc(entityRoot.get("spId"));
