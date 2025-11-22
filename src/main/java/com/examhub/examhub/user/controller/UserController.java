@@ -19,7 +19,7 @@ public class UserController {
 
     @PostMapping("/create")
     public ResponseEntity<?> createUser(@RequestBody UserTO user){
-        response = ResponseTO.responseBuilder(200, "C0002","created successfully", "/user/create","user", userService.createUser(user));
+        response = ResponseTO.responseBuilder(200, "C0001","created successfully", "/user/create","user", userService.createUser(user));
         return new ResponseEntity<ResponseTO>(response, HttpStatus.CREATED);
     }
     @PutMapping("/update")
