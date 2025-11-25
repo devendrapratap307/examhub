@@ -10,6 +10,7 @@ import lombok.Setter;
 public class QuestionTopicTO {
 
     private Integer id;
+    private Integer assessmentId;
 //    private Assessment assessment;
     private String topicName;
     private String description;

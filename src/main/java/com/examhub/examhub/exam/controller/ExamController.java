@@ -42,4 +42,9 @@ public class ExamController {
         response = ResponseTO.responseBuilder(200, "C0005","fetched successfully", "/exam/search","assessment", examService.searchAssessment(searchRequest));
         return new ResponseEntity<ResponseTO>(response, HttpStatus.OK);
     }
+    @PostMapping("/search")
+    public ResponseEntity<?> importAssessment(@RequestBody SearchRequestTO searchRequest){
+        response = ResponseTO.responseBuilder(200, "C0005","fetched successfully", "/exam/search","assessment", examService.searchAssessment(searchRequest));
+        return new ResponseEntity<ResponseTO>(response, HttpStatus.OK);
+    }
 }

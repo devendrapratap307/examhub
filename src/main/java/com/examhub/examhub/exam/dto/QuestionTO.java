@@ -12,6 +12,7 @@ import java.time.LocalDateTime;
 public class QuestionTO {
 
     private Integer id;
+    private Integer questionTopicId;
 //    private Assessment assessment;
     private String question;
     private String questionType;
@@ -21,8 +22,8 @@ public class QuestionTO {
     private String dOpt;
     private String eOpt;
     private String answer;
-    private double score;
-    private Integer negativeScore;
+    private double marks;
+    private double negativeMarks;
 
     private Integer createdBy;
     private Integer updatedBy;

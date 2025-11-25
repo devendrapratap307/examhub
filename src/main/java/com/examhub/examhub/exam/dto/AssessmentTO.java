@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 public class AssessmentTO {
 
     private Integer id;
-    private Integer recruiterId;
+    private Integer recruiterId; // need to convert it into list to show to recruiters
     private String assessmentType;
     private String status;
     private String title;

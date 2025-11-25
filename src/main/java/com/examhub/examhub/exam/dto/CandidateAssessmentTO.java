@@ -12,17 +12,19 @@ import java.time.LocalDateTime;
 public class CandidateAssessmentTO {
 
     private Integer id;
-//    private Assessment assessment;
     private Integer candidateId;
-    private String name;
-    private String email;
-    private String phone;
+    private Integer recruiterId;
+    private Integer assessmentId;
     private String status;
-    private double score;
-    private String feedback;
-    private LocalDateTime startTime;
-    private LocalDateTime endTime;
-    private Integer duration;
+    private LocalDateTime expirationDate;
+
+    // After completion of assessment
+    private String feedback; // by recruiter
+    private LocalDateTime startTime; // started by candidate
+    private LocalDateTime endTime;  // ended by candidate
+    private Integer duration; // total time
+
+    private double marks; // scored by candidate
     private double maxScore;
     private double passingScore;
 
@@ -30,5 +32,4 @@ public class CandidateAssessmentTO {
     private Integer updatedBy;
     private LocalDateTime updatedAt;
     private LocalDateTime createdAt;
-
 }

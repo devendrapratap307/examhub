@@ -17,55 +17,43 @@ public class CandidateAssessmentBO {
     @Column(name = "id", nullable = false)
     private Integer id;
 
-//    @ManyToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name = "assessment_id", nullable = false)
-//    private Assessment assessment;
+
 
     @Column(name = "candidate_id", nullable = false)
     private Integer candidateId;
-
-    @Column(name = "name", length = 255)
-    private String name;
-
-    @Column(name = "email", length = 255)
-    private String email;
-
-    @Column(name = "phone", length = 20)
-    private String phone;
-
+    @Column(name = "recruiter_id", nullable = false)
+    private Integer recruiterId;
+    @Column(name = "assessment_idd", nullable = false)
+    private Integer assessmentId;
     @Column(name = "status", length = 20)
     private String status;
+    @Column(name = "expiration_date")
+    private LocalDateTime expirationDate;
 
-    @Column(name = "score", precision = 22, scale = 6)
-    private double score;
 
+    // After completion of assessment
     @Column(name = "feedback", columnDefinition = "TEXT")
     private String feedback;
-
     @Column(name = "start_time")
     private LocalDateTime startTime;
-
     @Column(name = "end_time")
     private LocalDateTime endTime;
-
     @Column(name = "duration")
     private Integer duration;
 
-    @Column(name = "max_score", precision = 22, scale = 6, nullable = false)
+    @Column(name = "marks", precision = 22, scale = 6)
+    private double marks; // scored by candidate
+    @Column(name = "max_score", precision = 22, scale = 6)
     private double maxScore;
-
-    @Column(name = "passing_score", precision = 22, scale = 6, nullable = false)
+    @Column(name = "passing_score", precision = 22, scale = 6)
     private double passingScore;
 
     @Column(name = "created_by")
     private Integer createdBy;
-
     @Column(name = "updated_by")
     private Integer updatedBy;
-
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
-
     @Column(name = "created_at")
     private LocalDateTime createdAt;
 

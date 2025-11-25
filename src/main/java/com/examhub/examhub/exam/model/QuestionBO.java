@@ -17,9 +17,8 @@ public class QuestionBO {
     @Column(name = "id", nullable = false)
     private Integer id;
 
-//    @ManyToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name = "assessment_id", nullable = false)
-//    private Assessment assessment;
+    @Column(name = "question_topic_id")
+    private Integer questionTopicId;
 
     @Column(name = "question_text", columnDefinition = "TEXT", nullable = false)
     private String question;
@@ -45,21 +44,18 @@ public class QuestionBO {
     @Column(name = "answer", columnDefinition = "TEXT")
     private String answer;
 
-    @Column(name = "score", precision = 22, scale = 6, nullable = false)
-    private double score;
+    @Column(name = "marks", precision = 22, scale = 6, nullable = false)
+    private double marks;
 
-    @Column(name = "negative_score")
-    private Integer negativeScore;
+    @Column(name = "negative_marks")
+    private double negativeMarks;
 
     @Column(name = "created_by")
     private Integer createdBy;
-
     @Column(name = "updated_by")
     private Integer updatedBy;
-
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
-
     @Column(name = "created_at")
     private LocalDateTime createdAt;
 }

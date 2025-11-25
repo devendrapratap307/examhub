@@ -15,6 +15,9 @@ public class QuestionTopicBO {
     @Column(name = "id", nullable = false)
     private Integer id;
 
+    @Column(name = "assessment_id")
+    private Integer assessmentId;
+
 //    @ManyToOne(fetch = FetchType.LAZY)
 //    @JoinColumn(name = "assessment_id", nullable = false)
 //    private Assessment assessment;

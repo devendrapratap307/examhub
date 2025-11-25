@@ -11,18 +11,18 @@ import java.time.LocalDateTime;
 public class CandidateAnswerTO {
 
     private Integer id;
-    private String answer;
+
     private double score;
     private Boolean isCorrect;
+
+    private Integer candidateId;
+    private Integer questionId;
+    private String answerOption; // A, B, C, D, E
+    private String answer; // Input Based
 
     private Integer createdBy;
     private Integer updatedBy;
     private LocalDateTime updatedAt;
     private LocalDateTime createdAt;
-
-//    private Assessment assessment;
-//    private Question question;
-
-    private Integer candidateId;
 
 }
