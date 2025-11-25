@@ -4,9 +4,8 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 public class CandidateTO {
-
     private Integer id;
-    private Integer recruiterId;
+    private Integer recruiterId;    // related recruiter
     private String name;
     private String email;
     private String passcode;
